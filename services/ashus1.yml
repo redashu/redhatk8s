@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ashus11  #  name of service 
+spec:
+  ports:
+  - name: myport
+    port: 80    #   manadotary filed  this port will be bounded with service IP 
+    protocol: TCP
+    targetPort: 80   #  same as  pod port  or i can say expose in Dockerfile
+  selector:    #  this is label finder of pods
+    x: hello
+  type: NodePort  # kind of service

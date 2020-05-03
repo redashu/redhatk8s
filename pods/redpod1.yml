@@ -1,0 +1,13 @@
+apiVersion: v1 # kubernetes api version 
+kind: Pod   #  pod api-resource
+metadata:     #  info about pod
+ name: redpod1 
+ labels:
+  x: hello         #  this label will be sticked with pod
+
+spec:
+ containers:
+  - image: nginx  #  docker hub image 
+    name: ashuc1  # container  name
+    ports:  #  you can ignore this field bcz k8s will detect it automatically
+     - containerPort: 80  #  port of container same expose in DOckerfile
